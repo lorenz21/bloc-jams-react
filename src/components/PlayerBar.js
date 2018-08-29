@@ -20,7 +20,7 @@ class PlayerBar extends Component {
           <input
           type="range"
           className="seek-bar mdl-slider mdl-js-slider"
-          value={(this.props.currentTime / this.props.duration) || 0}
+          value={(this.props.currentTime / this.props.duration) || 0.01}
           max="1"
           min="0"
           step="0.01"
