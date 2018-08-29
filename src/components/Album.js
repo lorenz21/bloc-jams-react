@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import './Album.css'
 
 class Album extends Component {
   constructor(props){
@@ -131,7 +132,7 @@ class Album extends Component {
             <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
         </section>
-        <table id="song-list" align="center">
+        <table id="song-list" className="dl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" align="center">
           <colgroup>
             <col id="song-number-column" />
             <col id="song-title-column" />
@@ -141,7 +142,7 @@ class Album extends Component {
             {
             this.state.album.songs.map( (song, index) =>
             <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.setState({hover: true})} onMouseLeave={() => this.setState({hover: false})}>
-              <td>{
+              <td className="mdl-data-table__cell--non-numeric">{
                 (this.state.hover === true && this.state.currentSong.title === song.title) ?
                 <span className={ this.state.isPlaying ? "ion-md-pause" : "ion-md-play" }></span>
                 :
